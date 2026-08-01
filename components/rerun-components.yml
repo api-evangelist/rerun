@@ -1,0 +1,21 @@
+generated: '2026-07-20'
+method: searched
+source: >-
+  registry.npmjs.org (@rerun-io/web-viewer, @rerun-io/web-viewer-react) and the
+  Rerun web-viewer embedding docs (rerun.io/docs). Distinct from the native SDK
+  client libraries in packages/rerun-packages.yml.
+description: >-
+  Rerun's client-side, embeddable viewer components — the browser/WASM viewer
+  packaged so it can be mounted inside a host web app to render Rerun recordings
+  (.rrd) or connect to a live gRPC stream. Distinct from the logging SDKs.
+docs:
+  - https://rerun.io/docs/getting-started/data-in/web-viewer
+libraries:
+  - {name: "@rerun-io/web-viewer", purpose: Vanilla-JS embeddable Rerun web viewer (WASM). Catalogued in packages/}
+  - {name: "@rerun-io/web-viewer-react", purpose: React component wrapper around the web viewer. Catalogued in packages/}
+families:
+  web_viewer:
+    description: The full Rerun viewer compiled to WebAssembly and embedded as a component in a host page.
+    components:
+      - {name: WebViewer, id: web-viewer, description: Vanilla-JS class that mounts the viewer into a DOM element and loads .rrd recordings or connects to a live gRPC stream URL.}
+      - {name: "<Viewer /> (React)", id: web-viewer-react, description: React component wrapping WebViewer with props for recording/stream sources.}

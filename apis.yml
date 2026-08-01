@@ -1,8 +1,31 @@
 aid: rerun
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/rerun.png
 name: Rerun
-description: 'Rerun is a company surfaced as a portfolio company of costanoa-ventures, point-nine, seedcamp
-  and added to the API Evangelist network as a stub for enrichment. Sector: dev-tools-ai. This profile
-  is a lead awaiting the enrichment pipeline.'
+description: >-
+  Rerun is an open-source data platform — "the unified data layer for physical
+  AI" — for multimodal, multi-rate time-series data from robotics and computer
+  vision. It provides the data primitives to log, store, query, transform, and
+  visualize images, point clouds, tensors, transforms, and other sensor streams
+  from initial recording through production scale. The open-source toolchain (a
+  logging SDK across Python, Rust, and C++, an interactive desktop/web viewer,
+  SQL/dataframe queries, a PyTorch dataloader, the columnar .rrd file format,
+  and a local catalog) is free and dual-licensed MIT OR Apache-2.0; Rerun Hub is
+  the commercial managed backend adding a persistent catalog, byte-range
+  indexing across object stores, dataset streaming to GPUs, SSO, and
+  single-tenant deployment. Rerun's programmatic surface is an SDK plus a gRPC
+  data server and a Viewer MCP server, rather than a hosted REST API. Backed by
+  Costanoa Ventures, Point Nine, and Seedcamp.
 url: https://raw.githubusercontent.com/api-evangelist/rerun/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -14,10 +37,17 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
 - Dev Tools Ai
+- Robotics
+- Computer Vision
+- Physical AI
+- Data Visualization
+- SDK
+- Open Source
+- MCP
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -27,3 +57,46 @@ maintainers:
 common:
 - type: Website
   url: https://rerun.io
+- type: Documentation
+  url: https://rerun.io/docs/overview/what-is-rerun
+- type: APIReference
+  url: https://rerun.io/docs/reference/types/archetypes
+- type: GettingStarted
+  url: https://rerun.io/docs/getting-started/quick-start
+- type: Blog
+  url: https://rerun.io/blog
+- type: Pricing
+  url: https://rerun.io/pricing
+- type: GitHubOrganization
+  url: https://github.com/rerun-io
+- type: SignUp
+  url: https://rerun.io/pricing
+- type: Support
+  url: https://discord.gg/PXtCgFBSmH
+- type: Packages
+  url: packages/rerun-packages.yml
+- type: SDKs
+  url: packages/rerun-packages.yml
+- type: CLI
+  url: cli/rerun-cli.yml
+- type: Components
+  url: components/rerun-components.yml
+- type: MCPServer
+  url: mcp/rerun-mcp.yml
+- type: ChangeLog
+  url: changelog/rerun-changelog.yml
+- type: Lifecycle
+  url: lifecycle/rerun-lifecycle.yml
+- type: Conformance
+  url: conformance/rerun-conformance.yml
+- type: WellKnown
+  url: well-known/rerun-well-known.yml
+- type: DomainSecurity
+  url: security/rerun-domain-security.yml
+- type: LLMsTxt
+  url: llms/rerun-llms.txt
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 10
+  pass: local-v1

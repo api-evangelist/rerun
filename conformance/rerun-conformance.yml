@@ -1,0 +1,44 @@
+generated: '2026-07-20'
+method: searched
+source: >-
+  Derived from Rerun's published architecture and docs (rerun.io/docs,
+  CHANGELOG, CLI reference) plus registry metadata. Rerun's programmatic surface
+  is a gRPC data server (rerun.v1alpha1 protobuf, crates/store/re_protos) and an
+  MCP server, not a REST/HTTP API, so the cross-cutting standards asserted here
+  reflect that. absence is recorded as conforms:false with evidence.
+standards:
+  - id: grpc
+    conforms: true
+    evidence: >-
+      The viewer/data server communicates over gRPC (`rerun server`); protobuf
+      schemas live at crates/store/re_protos/proto/rerun/v1alpha1 in the repo.
+  - id: protobuf
+    conforms: true
+    evidence: rerun.v1alpha1 protobuf message/service definitions in the monorepo.
+  - id: mcp
+    conforms: true
+    evidence: >-
+      First-party local MCP server `rerun viewer-mcp` (since 0.34.0) exposes the
+      Viewer to LLM agents (mcp/rerun-mcp.yml).
+  - id: apache-arrow
+    conforms: true
+    evidence: >-
+      Rerun's data model and .rrd/columnar format are built on Apache Arrow;
+      SQL/dataframe queries and the PyTorch dataloader operate over Arrow.
+  - id: mcap
+    conforms: true
+    evidence: '`rerun mcap convert|info` reads/writes the MCAP robotics log format.'
+  - id: oauth2
+    conforms: false
+    evidence: >-
+      No OAuth2 authorization surface is documented; Rerun Hub uses `rerun auth`
+      token-based auth + SSO, but no public OAuth2/OIDC discovery endpoint.
+  - id: oidc
+    conforms: false
+    evidence: /.well-known/openid-configuration on rerun.io returns 404.
+  - id: rest
+    conforms: false
+    evidence: Rerun exposes no public REST/HTTP JSON API; the interface is SDK + gRPC.
+  - id: rfc9457
+    conforms: false
+    evidence: No HTTP problem+json error surface (no REST API).

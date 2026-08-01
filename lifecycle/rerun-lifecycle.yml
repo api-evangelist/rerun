@@ -1,0 +1,36 @@
+generated: '2026-07-20'
+method: searched
+source: >-
+  https://github.com/rerun-io/rerun/blob/main/CHANGELOG.md,
+  https://rerun.io/docs (migration guides), https://rerun.io/pricing; status
+  page probed at status.rerun.io (no host, DNS failure). Rerun is an
+  SDK/CLI/viewer product, not a hosted REST API, so lifecycle is release-based
+  rather than dated-API-version-based.
+versioning:
+  scheme: semver (0.MINOR.PATCH), single version shared across all SDKs, viewer, and CLI
+  current: 0.34.1
+  changelog: https://github.com/rerun-io/rerun/blob/main/CHANGELOG.md
+  notes: >-
+    Pre-1.0. Minor releases (0.x.0) routinely include breaking changes to the
+    data model, archetypes, and APIs, each documented with a migration guide in
+    the docs. Recordings can be forward-migrated with `rerun rrd migrate`.
+deprecation:
+  policy_url: https://github.com/rerun-io/rerun/blob/main/CHANGELOG.md
+  sunset_header: false
+  notes: >-
+    Breaking changes and renames (e.g. MCAP layers -> decoders, `rrd compact` ->
+    `rrd optimize`, server `address` -> `url`) are announced per-release in the
+    CHANGELOG with migration notes; there is no RFC 8594 Sunset/Deprecation HTTP
+    header surface because there is no hosted API version to sunset.
+sla:
+  url: null
+  public_uptime_target: null
+  notes: >-
+    Open-source SDK is self-hosted; the commercial Rerun Hub carries tiered
+    support (shared Slack to dedicated engineer) per enterprise agreement, no
+    published numeric uptime SLA.
+status_page: null
+status_page_probe:
+  url: https://status.rerun.io
+  status: 000
+  note: No status host resolves; Rerun does not publish a public status page.

@@ -1,0 +1,20 @@
+generated: '2026-07-20'
+method: searched
+source: >-
+  Results of probing the /.well-known/ discovery surface for the base host in
+  apis.yml (https://rerun.io). Status is the HTTP code observed at fetch time
+  (curl, following redirects). No discovery documents are published; all paths
+  return 404. Nothing was saved verbatim.
+hosts:
+  - host: https://rerun.io
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404

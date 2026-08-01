@@ -1,0 +1,30 @@
+generated: '2026-07-20'
+method: searched
+source: >-
+  Rerun CHANGELOG 0.34.0 (github.com/rerun-io/rerun/blob/main/CHANGELOG.md) and
+  the CLI reference (rerun.io/docs/reference/cli, `rerun viewer-mcp` subcommand).
+  Confirmed first-party and shipped in the SDK; the exact tool schema was not
+  captured verbatim (no standalone docs page), so tools[] below are omitted
+  rather than guessed.
+description: >-
+  Rerun ships a first-party local (stdio) MCP server that lets LLM agents see
+  and interact with a running Rerun Viewer. Introduced in Rerun 0.34.0
+  (2026-07-06) and exposed through the bundled CLI as `rerun viewer-mcp`. This
+  is a Viewer-control MCP, not a hosted remote data API.
+servers:
+  - name: Rerun Viewer MCP
+    kind: local
+    transport: stdio
+    status: available
+    official: true
+    launch: rerun viewer-mcp
+    since: 0.34.0
+    purpose: >-
+      Allows an LLM agent to observe the current state of and drive a running
+      Rerun Viewer (inspect and interact with logged recordings).
+    packaged_in: packages/rerun-packages.yml (rerun-sdk / rerun-cli)
+    docs: https://rerun.io/docs/reference/cli
+    tools: []
+    tools_note: >-
+      Tool list not captured verbatim — no public MCP tool-schema page was
+      found at fetch time. Enumerate live via `rerun viewer-mcp` MCP handshake.

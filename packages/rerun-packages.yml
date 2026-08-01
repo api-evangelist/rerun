@@ -1,0 +1,75 @@
+generated: '2026-07-20'
+method: searched
+source: >-
+  Verified against the public package registries (pypi.org/pypi/rerun-sdk/json,
+  crates.io/api/v1/crates/rerun, registry.npmjs.org) and the Rerun install docs
+  (https://rerun.io/docs/getting-started/installing-viewer). All packages are
+  first-party, published by the rerun-io org from the github.com/rerun-io/rerun
+  monorepo. Registry HTTP status recorded at fetch time.
+description: >-
+  First-party Rerun client libraries and tooling. Rerun ships a single logging
+  SDK across three native languages (Python, Rust, C++) plus JavaScript viewer
+  embedding packages, all versioned in lockstep (0.34.1 at capture time) and
+  dual-licensed MIT OR Apache-2.0.
+packages:
+  - language: python
+    registry: pypi
+    name: rerun-sdk
+    version: 0.34.1
+    url: https://pypi.org/project/rerun-sdk/
+    source: https://github.com/rerun-io/rerun
+    install: pip install rerun-sdk
+    license: MIT OR Apache-2.0
+    official: true
+    note: The Rerun Logging SDK for Python. Bundles the `rerun` CLI / viewer binary.
+    status: 200
+  - language: rust
+    registry: crates.io
+    name: rerun
+    version: 0.34.1
+    url: https://crates.io/crates/rerun
+    source: https://github.com/rerun-io/rerun
+    install: cargo add rerun
+    license: MIT OR Apache-2.0
+    official: true
+    note: Log images, point clouds, etc, and visualize them effortlessly.
+    status: 200
+  - language: rust
+    registry: crates.io
+    name: rerun-cli
+    url: https://crates.io/crates/rerun-cli
+    source: https://github.com/rerun-io/rerun
+    install: cargo install rerun-cli --locked --features nasm
+    license: MIT OR Apache-2.0
+    official: true
+    note: The `rerun` command-line binary / native viewer. Command surface in cli/rerun-cli.yml.
+  - language: cpp
+    registry: source
+    name: rerun_cpp
+    url: https://github.com/rerun-io/rerun/tree/main/rerun_cpp
+    source: https://github.com/rerun-io/rerun
+    install: CMake FetchContent / download from GitHub Releases
+    license: MIT OR Apache-2.0
+    official: true
+    note: The C++ SDK. Distributed via GitHub Releases and CMake, not a package registry.
+  - language: javascript
+    registry: npm
+    name: "@rerun-io/web-viewer"
+    version: 0.34.1
+    url: https://www.npmjs.com/package/@rerun-io/web-viewer
+    source: https://github.com/rerun-io/rerun/tree/main/rerun_js
+    install: npm install @rerun-io/web-viewer
+    license: MIT OR Apache-2.0
+    official: true
+    note: Embed the Rerun web viewer in your app. See components/rerun-components.yml.
+    status: 200
+  - language: javascript
+    registry: npm
+    name: "@rerun-io/web-viewer-react"
+    url: https://www.npmjs.com/package/@rerun-io/web-viewer-react
+    source: https://github.com/rerun-io/rerun/tree/main/rerun_js
+    install: npm install @rerun-io/web-viewer-react
+    license: MIT OR Apache-2.0
+    official: true
+    note: React bindings for the embeddable Rerun web viewer.
+    status: 200

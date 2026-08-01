@@ -1,0 +1,56 @@
+generated: '2026-07-20'
+method: searched
+source: https://rerun.io/docs/reference/cli
+description: >-
+  The `rerun` command-line interface — the developer tooling that ships with the
+  Rerun SDK. It spawns the native/web viewer, runs an in-memory gRPC data
+  server, manipulates .rrd/.rbl recordings and .mcap files, and hosts the Viewer
+  MCP server. The binary itself is catalogued in packages/rerun-packages.yml
+  (rerun-sdk / rerun-cli); this artifact enumerates its command surface.
+docs: https://rerun.io/docs/reference/cli
+repo: https://github.com/rerun-io/rerun
+install:
+  pip: pip install rerun-sdk
+  cargo: cargo install rerun-cli --locked --features nasm
+commands:
+  viewer_server:
+    - {name: server, description: Run an in-memory Rerun data server (gRPC).}
+    - {name: reset, description: Clear the Rerun Viewer's memory.}
+    - {name: viewer-mcp, description: Operate an MCP server that lets LLM agents control a Rerun Viewer. See mcp/rerun-mcp.yml.}
+  recordings:
+    - {name: rrd compare, description: Compare two .rrd recording files.}
+    - {name: rrd filter, description: Filter the contents of an .rrd file.}
+    - {name: rrd merge, description: Merge multiple recordings into one.}
+    - {name: rrd migrate, description: Migrate older recordings to the current format.}
+    - {name: rrd optimize, description: Compact/optimize an .rrd file (formerly `rrd compact`).}
+    - {name: rrd print, description: Print the contents of a recording.}
+    - {name: rrd route, description: Route/repartition recording streams.}
+    - {name: rrd split, description: Split a recording into multiple files.}
+    - {name: rrd stats, description: Print statistics about a recording.}
+    - {name: rrd verify, description: Verify the integrity of a recording.}
+  mcap:
+    - {name: mcap convert, description: Convert .mcap file contents to/from Rerun formats.}
+    - {name: mcap info, description: Inspect the contents of an .mcap file.}
+  data:
+    - {name: download, description: Fetch recordings and save them as .rrd files.}
+  auth:
+    - {name: auth login, description: Authenticate with Rerun services (Hub).}
+    - {name: auth logout, description: Remove stored Rerun credentials.}
+    - {name: auth token, description: Show the current auth token.}
+    - {name: auth generate-token, description: Generate an auth token for Rerun services.}
+  analytics:
+    - {name: analytics email, description: Set the email associated with analytics.}
+    - {name: analytics enable, description: Enable anonymous usage analytics.}
+    - {name: analytics disable, description: Disable anonymous usage analytics.}
+    - {name: analytics config, description: Show the analytics configuration.}
+    - {name: analytics clear, description: Clear stored analytics state.}
+    - {name: analytics details, description: Print details about collected analytics.}
+  help:
+    - {name: man, description: Generate CLI documentation in markdown.}
+key_flows:
+  - name: Spawn a viewer and log to it
+    detail: A running SDK session connects to a spawned `rerun` viewer over gRPC to stream logged data live.
+  - name: Post-process a recording
+    detail: Use `rrd filter | optimize | merge | split` to reshape .rrd files offline.
+  - name: Agent-drive the viewer
+    detail: Start `rerun viewer-mcp` so an LLM agent can inspect and interact with a live Viewer.
