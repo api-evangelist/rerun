@@ -15,7 +15,8 @@ servers:
   - name: Rerun Viewer MCP
     kind: local
     transport: stdio
-    status: available
+    status: published
+    status_raw: available
     official: true
     launch: rerun viewer-mcp
     since: 0.34.0
