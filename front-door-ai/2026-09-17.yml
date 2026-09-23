@@ -1,0 +1,29 @@
+# Front Door AI Index — rerun — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: rerun
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: rerun.io
+  final_host: rerun.io
+  ownership: own
+  owner: rerun
+  shares_host_with: null
+  inherited_from: null
+  verdict: scored
+  score: 9
+  host_score: 9
+  density: 5.36
+  words: 1680
+  tiers:
+    agentic: 1
+    core: 6
+    model: 2
+  ambiguous: 1
+  top_terms:
+    AI: 6
+    Claude: 1
+    Hugging Face: 1
+    agent: 1
+    agentic: 1
