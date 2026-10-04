@@ -53,11 +53,11 @@ tags:
 - Company
 - Dev Tools Ai
 - Robotics
-- Computer-Vision
+- Computer Vision
 - Physical AI
 - Data Visualization
 - SDK
-- Open-Source
+- Open Source
 - MCP
 tags_raw:
 - Company
@@ -69,6 +69,8 @@ tags_raw:
 - SDK
 - Open Source
 - MCP
+- Computer-Vision
+- Open-Source
 apis: []
 maintainers:
 - FN: Kin Lane
